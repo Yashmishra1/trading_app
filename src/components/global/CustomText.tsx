@@ -9,7 +9,6 @@ import React, { FC } from 'react';
 import { FONTS } from '../../constants/Fonts';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { Colors } from '../../constants/Colors';
-import { useTheme } from '@react-navigation/native';
 
 interface Props {
   variant?:
@@ -40,7 +39,6 @@ const CustomText: FC<Props> = ({
   children,
   numberOfLines,
 }) => {
-  const { colors } = useTheme();
   let computedFontSize: number;
   switch (variant) {
     case 'h1':
@@ -97,7 +95,7 @@ const CustomText: FC<Props> = ({
         style={[
           styles.text,
           {
-            color: colors.text,
+            color: Colors.text,
             fontSize: computedFontSize,
           },
           fontFamilyStyle,
