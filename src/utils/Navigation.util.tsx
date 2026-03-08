@@ -5,7 +5,7 @@ import {
 
 export const navigationRef = createNavigationContainerRef();
 
-export async function navigation(name: string, params?: object) {
+export async function navigate(name: string, params?: object) {
   if (navigationRef.isReady()) {
     navigationRef.dispatch(CommonActions.navigate(name, params));
   }

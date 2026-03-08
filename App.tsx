@@ -1,4 +1,3 @@
-import { View, Text } from 'react-native';
 import React from 'react';
 import Navigation from './src/navigation/Navigation';
 import { Provider } from 'react-redux';
@@ -8,13 +7,13 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Toast from 'react-native-toast-message';
 import { toastConfig } from './ToastConfig';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
-import { WEB_CLIENT_ID } from './config/env';
+import { IOS_GOOGLE_CLIENT_ID, WEB_CLIENT_ID } from './config/env';
 
 GoogleSignin.configure({
   webClientId: WEB_CLIENT_ID,
   forceCodeForRefreshToken: true,
   offlineAccess: false,
-  iosClientId: WEB_CLIENT_ID,
+  iosClientId: IOS_GOOGLE_CLIENT_ID,
 });
 
 const App = () => {
